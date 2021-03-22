@@ -1,0 +1,16 @@
+{
+  "name": "API Portal",
+  "short_name": "API_Portal",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#2a3f54",
+  "description": "Softclans API Portal",
+  "theme_color": "#2a3f54",
+  "icons": [
+    {
+      "src": "./public/images/icon-144x144.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    }
+  ]
+}

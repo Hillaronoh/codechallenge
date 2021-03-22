@@ -79,7 +79,27 @@ export default new Vuex.Store({
                         reject(err)
                     })
             })
+        },
+
+        validateUserSession({commit, dispatch}) {
+            const timer = window.setInterval(() => {
+                axios.get("authenticateUserSession")
+                    .then((resp) => {
+                        let data = resp.data,
+                            success = data.success;
+                        if (success == false || success === false) {
+                            dispatch('logout');
+                            router.push('/login');
+                            clearTimeout(timer);
+                        }
+                    })
+                    .catch(err => {
+
+                    })
+
+            }, 120000);
         }
+
     },
 
     getters: {

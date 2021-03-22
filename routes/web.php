@@ -18,3 +18,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/','AdministrationController@index');
 Route::get('login', 'AdministrationController@index')->name('login');
 
+Route::group(['middleware' => ['web']], function () {
+    Route::get('authenticateUserSession', 'AdministrationController@authenticateUserSession');
+    Route::get('logoutUser', 'AuthController@logoutUser');
+    Route::post('authenticateUser', 'AuthController@authenticateUser');
+});
+

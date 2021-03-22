@@ -53,7 +53,7 @@
                         type="danger"
                         icon="trash"
                         :visible="isUpdate"
-                        @click="deleteSupplierProduct"
+                        @click="deleteOrderDetail"
                     />
                 </div>
             </div>

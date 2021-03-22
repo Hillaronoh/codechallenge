@@ -16,7 +16,7 @@
 <script>
     import OrdersGrid from './grids/OrdersGrid'
     import OrdersForm from './forms/OrdersForm'
-    import {SupplierProductsDataSource} from '../../datasources/datasource'
+    import {OrdersDataSource, SupplierProductsDataSource} from '../../datasources/datasource'
     export default {
         name: "Orders",
         components:{
@@ -52,7 +52,7 @@
             };
         },
         created(){
-            SupplierProductsDataSource.reload();
+            OrdersDataSource.reload();
         },
         methods:{
 

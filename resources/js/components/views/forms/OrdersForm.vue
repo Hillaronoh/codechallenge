@@ -162,8 +162,9 @@
                     if (dialogResult) {
                         const form = this.$refs[this.ordersForm].instance,
                             data = form.option("formData"),
-                            id = data.id;
-                        axios({url: `api/v1/deleteSupplierProductDetails/${id}`, method: 'DELETE'})
+                            id = data.id,
+                            table_name='orders';
+                        axios({url: `api/v1/deleteRecord/${id}/{table_name}`, method: 'DELETE'})
                             .then(response => {
                                 let resp = response.data,
                                     success = resp.success,
@@ -177,7 +178,7 @@
                                         }
                                     }, 'success', 3000);
                                     this.popupVisibility(false);
-                                    SuppliersDataSource.reload();
+                                    OrdersDataSource.reload();
                                 } else {
                                     notify({
                                         message: message,

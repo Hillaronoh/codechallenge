@@ -26,6 +26,7 @@ Route::group(['prefix' => 'v1', 'middleware' => ['auth:api']], function () {
     Route::post('saveOrderDetails','UtilityController@saveOrderDetails');
     Route::get('getSupplierProducts','UtilityController@getSupplierProducts');
     Route::post('saveSupplierProductDetails','UtilityController@saveSupplierProductDetails');
+    Route::delete('deleteRecord/{id}/{table_name}','UtilityController@deleteRecord');
 });
 
 

@@ -17,26 +17,4 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/','AdministrationController@index');
 Route::get('login', 'AdministrationController@index')->name('login');
-//Auth::routes();
-//Route::get('/home', 'HomeController@index')->name('home');
-
-Route::group(['middleware' => ['web']], function () {
-    //AdministrationController
-    Route::get('getNavigationRoutes', 'AdministrationController@getNavigationRoutes');
-    Route::get('createUser', 'AdministrationController@createUser');
-    Route::get('getMenus', 'AdministrationController@getMenus');
-    Route::get('getSystemUsers', 'AdministrationController@getSystemUsers');
-    Route::get('getSystemMenus', 'AdministrationController@getSystemMenus');
-    Route::post('saveMenuItem', 'AdministrationController@saveMenuItem');
-    Route::get('getAdminModuleParamFromTable', 'AdministrationController@getAdminModuleParamFromTable');
-    Route::get('authenticateUserSession', 'AdministrationController@authenticateUserSession');
-    Route::delete('deleteRecord/{id}', 'AdministrationController@deleteRecord');
-    //AuthController
-    Route::post('personalAccessToken', 'AuthController@personalAccessToken');
-    Route::get('logoutUser', 'AuthController@logoutUser');
-    Route::post('authenticateUser', 'AuthController@authenticateUser');
-    Route::get('googleCallback', function(Request $request){
-        print_r($request->all());
-    });
-});
 

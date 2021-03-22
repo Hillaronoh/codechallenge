@@ -171,4 +171,28 @@ class UtilityController extends Controller
         return response()->json($res);
     }
 
+    public function deleteRecord(Request $request,$id,$table_name)
+    {
+        try{
+            DB::table($table_name)
+                ->where('id','=',$id)
+                ->delete();
+            $res=array(
+                'success'=>true,
+                'message'=>'Record deleted successfully'
+            );
+        }catch (\Exception $exception) {
+            $res = array(
+                'success' => false,
+                'message' => $exception->getMessage()
+            );
+        } catch (\Throwable $throwable) {
+            $res = array(
+                'success' => false,
+                'message' => $throwable->getMessage()
+            );
+        }
+        return response()->json($res);
+    }
+
 }
